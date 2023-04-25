@@ -19,8 +19,8 @@ class Rectangle{ //Класс для инициализации и первич�
         this.v4 = [-55,80];
 
         this.vectors = [this.v1,this.v2,this.v3,this.v4];
-        this.angle = angle;
-        this.radAngle = degrees_to_radians(angle);
+        this.angle = angle*-1;
+        this.radAngle = degrees_to_radians(this.angle);
         //Поворачивам векторы на заданный угол
         for (this.vector of this.vectors){
             let tempX = this.vector[0] * Math.cos(this.radAngle) - this.vector[1] * Math.sin(this.radAngle);
@@ -124,6 +124,5 @@ var tests = [{
 ];
 
 tests.forEach((test) => {
-    console.log(test['card1'])
     assert.equal(test.answer, solve(test.card1, test.card2));
 });
